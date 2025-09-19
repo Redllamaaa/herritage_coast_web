@@ -10,3 +10,14 @@
   * the scope of this path.
   */
 @source "../../../**/*.{html,py,js}";
+
+@theme {
+  --color-background: #faefe0;
+  --color-footer: #282a29;
+  --color-gray-dark: #282a29;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+}
