@@ -1,0 +1,86 @@
+{% load static %}
+
+<footer class="bg-footer">
+  <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+
+    <!-- Main Grid with smaller center column -->
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-[auto_4rem_auto]">
+
+      <!-- Logo + Social -->
+      <div class="text-center mx-auto">
+        <div class="text-center mx-auto">
+          <img src="{% static 'logo.png' %}" alt="Logo" />
+        </div>
+
+        <p class="mt-3 max-w-xs text-white mx-auto">
+          Truly bespoke kitchen & cabinet maker.
+        </p>
+
+        <ul class="mt-8 flex justify-center gap-6">
+          <li>
+            <a href="#" rel="noreferrer" target="_blank"
+               class="text-white transition hover:opacity-75">
+              <span class="sr-only">Email</span>
+              <img src="{% static 'svg/email.svg' %}" class="footer-icon" alt="Email" />
+            </a>
+          </li>
+          <li>
+            <a href="#" rel="noreferrer" target="_blank"
+               class="text-white transition hover:opacity-75">
+              <span class="sr-only">Facebook</span>
+              <img src="{% static 'svg/facebook.svg' %}" class="footer-icon" alt="Facebook" />
+            </a>
+          </li>
+          <li>
+            <a href="#" rel="noreferrer" target="_blank"
+               class="text-white transition hover:opacity-75">
+              <span class="sr-only">Instagram</span>
+              <img src="{% static 'svg/instagram.svg' %}" class="footer-icon" alt="Instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="#" rel="noreferrer" target="_blank"
+               class="text-white transition hover:opacity-75">
+              <span class="sr-only">LinkedIn</span>
+              <img src="{% static 'svg/linkedin.svg' %}" class="footer-icon" alt="LinkedIn" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Narrow Spacer Column -->
+      <div class="hidden lg:block"></div>
+
+      <!-- Navigation Links -->
+      <div class="text-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                  justify-items-stretch gap-6 lg:gap-12">
+        <div>
+          <a href="#" class="font-medium text-white hover:opacity-75">About&nbsp;Us</a>
+        </div>
+        <div>
+          <a href="#" class="font-medium text-white hover:opacity-75">Gallery</a>
+        </div>
+        <div>
+          <a href="#" class="font-medium text-white hover:opacity-75">Reviews</a>
+        </div>
+        <div>
+          <a href="#" class="font-medium text-white hover:opacity-75">Contact&nbsp;Us</a>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="lg:col-span-4 mt-6 text-left space-y-2 text-white">
+          <p><span class="font-bold">Email:</span> <a href="mailto:info@heritage-coast.co.uk" class="hover:opacity-75">info@heritage-coast.co.uk</a></p>
+          <p><span class="font-bold">Phone:</span> <a href="tel:07889993450" class="hover:opacity-75">07889993450</a></p>
+          <p><span class="font-bold">Address:</span> 123 Heritage Coast Rd, Cornwall, UK</p>
+        </div>
+      </div>
+    </div>
+    <!-- /Main Grid -->
+
+    <!-- Footer Note -->
+    <p class="text-xs text-gray-500 dark:text-gray-400 text-center">
+      &copy; 2025. Heritage Coast Cabinet Makers Ltd. All rights reserved.
+    </p>
+
+  </div>
+</footer>
