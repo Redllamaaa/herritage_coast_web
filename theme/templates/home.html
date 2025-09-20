@@ -11,7 +11,6 @@
 </div>
 <div class="w-full px-6 py-12 text-black border-b-3 border-gray-dark">
     <div class="flex flex-col lg:flex-row items-center">
-        <!-- Left: text -->
         <div class="w-full lg:w-1/2 text-center lg:text-left px-6 lg:px-12">
             <h1 class="text-5xl md:text-7xl lg:text-8xl leading-tight text-gray-900">
                 Truly bespoke
@@ -21,12 +20,11 @@
                 makers.
             </h1>
             <div class="mt-8 flex justify-center lg:justify-start gap-6">
-                <a href="#contact" class="px-8 py-3 border border-gray-900 inline-block text-center w-48 hover:bg-background-h">Contact us</a>
-                <a href="#work" class="px-8 py-3 border border-gray-900 inline-block text-center w-48 hover:bg-background-h">View our work</a>
+                <a href="{% url 'about' %}" class="px-8 py-3 border border-gray-900 inline-block text-center w-48 hover:bg-background-h">Contact us</a>
+                <a href="{% url 'gallery' %}" class="px-8 py-3 border border-gray-900 inline-block text-center w-48 hover:bg-background-h">View our work</a>
             </div>
         </div>
 
-        <!-- Right: image -->
         <div class="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
             <img src="{% static 'Heritage_coast_02.jpg' %}" alt="Kitchen example" class="w-full h-auto object-cover" />
         </div>
