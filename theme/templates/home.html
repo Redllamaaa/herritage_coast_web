@@ -26,10 +26,87 @@
         </div>
 
         <div class="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
-            <img src="{% static 'Heritage_coast_02.jpg' %}" alt="Kitchen example" class="w-full h-auto object-cover" />
+            <img src="{% static '/images/IMG-20250920-WA0052.jpg' %}" alt="Kitchen example" class="w-full h-auto object-cover" />
         </div>
     </div>
 </div>
+
+<div class="bg-background">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+    <!-- Flex container for text + stats -->
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+      <!-- Text block -->
+      <div class="max-w-prose text-left">
+        <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+          Our carefully curated furniture, highly tailoured for your needs.
+        </h2>
+
+        <p class="mt-4 text-gray-900">
+          At Herritage Coast, we believe that furniture should be more than just functional; it should be a reflection of your personality and lifestyle. Our bespoke furniture is designed to seamlessly blend with your existing decor while adding a touch of elegance and sophistication to your space.
+        </p>
+
+        <p class="mt-4 text-gray-900">
+          All of our products are made in-house with our team of first-class craftsmen, ensuring the highest quality and attention to detail. We use only the finest materials, sourced from trusted suppliers, to create furniture that is not only beautiful but also durable and long-lasting.
+        </p>
+      </div>
+      <!-- Stats block -->
+      <div class="stats stats-vertical shadow text-black lg:ml-8">
+        <div class="stat">
+          <div class="stat-title text-black">Projects</div>
+          <div class="stat-value">31K</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title text-black">Clients</div>
+          <div class="stat-value">4,200</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title text-black">furniture produced</div>
+          <div class="stat-value">1,200</div>
+        </div>
+      </div>
+      <div><br/></div>
+    </div>
+  </div>
+</div>
+<div class="bg-background border-b-3 border-gray-dark">
+  <div class="relative mx-auto max-w-6xl w-full">
+    <div id="carousel"
+        class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth overflow-hidden aspect-[16/9]">
+    <img src="{% static '/images/IMG-20250920-WA0047.jpg' %}"
+        class="snap-center flex-shrink-0 w-full h-full object-cover" />
+    <img src="{% static '/images/IMG-20250920-WA0052.jpg' %}"
+        class="snap-center flex-shrink-0 w-full h-full object-cover" />
+    <img src="{% static '/images/IMG-20250920-WA0000.jpg' %}"
+        class="snap-center flex-shrink-0 w-full h-full object-cover" />
+    </div>
+
+    <!-- Left Button -->
+    <button onclick="scrollCarousel(-1)"
+            class="absolute top-1/2 left-4 -translate-y-1/2
+                bg-black/50 text-white rounded-full
+                w-12 h-12 flex items-center justify-center">
+    <i class="bi bi-chevron-left text-2xl"></i>
+    </button>
+
+    <!-- Right Button -->
+    <button onclick="scrollCarousel(1)"
+            class="absolute top-1/2 right-4 -translate-y-1/2
+                bg-black/50 text-white rounded-full
+                w-12 h-12 flex items-center justify-center">
+    <i class="bi bi-chevron-right text-2xl"></i>
+    </button>
+  </div>
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    function scrollCarousel(direction) {
+      const width = carousel.clientWidth;
+      carousel.scrollBy({ left: direction * width, behavior: 'smooth' });
+    }
+  </script>
+</div>
+
+
 <div class="bg-background">
     <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-prose text-center">
