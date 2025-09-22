@@ -26,7 +26,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '22'
+        node-version: '20'
 
     # Install Python dependencies
     - name: Install Python dependencies
@@ -37,13 +37,13 @@ jobs:
     # Install Tailwind dependencies
     - name: Install Tailwind dependencies
       run: |
-        cd theme   # replace with your Tailwind app folder
+        cd theme/static_src
         npm install
 
     # Build Tailwind CSS
     - name: Build Tailwind CSS
       run: |
-        cd theme
+        cd theme/static_src
         npm run build
 
     # Apply migrations
