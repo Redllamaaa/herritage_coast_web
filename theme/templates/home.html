@@ -31,14 +31,12 @@
     </div>
 </div>
 
-<div class="bg-background">
+<div class="bg-background border-b-3 border-gray-dark">
     <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-        <!-- Flex container for text + stats -->
-        <div class="flex flex-col items-center justify-center">
-            <!-- Text block -->
-            <div class="w-full max-w-4xl text-center">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
                 <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
-                    Our carefully curated furniture, highly tailoured for your needs.
+                    Our carefully curated furniture, highly tailored for your needs.
                 </h2>
 
                 <p class="mt-4 text-gray-900">
@@ -51,39 +49,47 @@
                     that is not only beautiful but also durable and long-lasting.
                 </p>
             </div>
+
+            <div class="w-full lg:w-1/2 relative">
+                <div id="carousel" class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth aspect-[16/9]">
+                    <img src="{% static '/images/IMG-20250920-WA0047.jpg' %}" class="snap-center flex-shrink-0 w-full h-full object-cover" />
+                    <img src="{% static '/images/IMG-20250920-WA0052.jpg' %}" class="snap-center flex-shrink-0 w-full h-full object-cover" />
+                    <img src="{% static '/images/IMG-20250920-WA0000.jpg' %}" class="snap-center flex-shrink-0 w-full h-full object-cover" />
+                </div>
+                <button onclick="scrollCarousel(-1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                    <i class="bi bi-chevron-left text-2xl"></i>
+                </button>
+                <button onclick="scrollCarousel(1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                    <i class="bi bi-chevron-right text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex justify-center mt-4">
+            <a href="{% url 'about' %}" class="text-black px-8 py-3 border border-gray-900 inline-block text-center w-64 hover:bg-background-h">
+                Find out more
+            </a>
         </div>
     </div>
 </div>
 
-<div class="bg-background border-b-3 border-gray-dark">
-    <div class="relative mx-auto max-w-6xl w-full">
-        <div id="carousel" class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth overflow-hidden aspect-[16/9]">
-            <img src="{% static '/images/IMG-20250920-WA0047.jpg' %}" class="snap-center flex-shrink-0 w-full h-full object-cover" />
-            <img src="{% static '/images/IMG-20250920-WA0052.jpg' %}" class="snap-center flex-shrink-0 w-full h-full object-cover" />
-            <img src="{% static '/images/IMG-20250920-WA0000.jpg' %}" class="snap-center flex-shrink-0 w-full h-full object-cover" />
-        </div>
+<script>
+    const carousel = document.getElementById("carousel");
+    function scrollCarousel(direction) {
+        const width = carousel.clientWidth;
+        carousel.scrollBy({ left: direction * width, behavior: "smooth" });
+    }
+</script>
 
-        <!-- Left Button -->
-        <button onclick="scrollCarousel(-1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white rounded-full w-12 h-12 flex items-center justify-center">
-            <i class="bi bi-chevron-left text-2xl"></i>
-        </button>
-
-        <!-- Right Button -->
-        <button onclick="scrollCarousel(1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white rounded-full w-12 h-12 flex items-center justify-center">
-            <i class="bi bi-chevron-right text-2xl"></i>
-        </button>f
-        <div class="flex justify-center mt-4 pb-8">
-            <a href="{% url 'about' %}" class="text-black px-8 py-3 border border-gray-900 inline-block text-center w-64 hover:bg-background-h">Find out more</a>
-        </div>
+<div>
+    <div class="flex flex-col items-center justify-center text-center pt-8">
+        <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+            Our carefully curated furniture, highly tailored for your needs.
+        </h2>
+        <p class="mt-4 text-gray-900 max-w-2xl">
+            Mark and Paul, the directors of Heritage Coast Cabinet Makers, founded the company out of a shared passion for quality craftsmanship. Combining their experience and vision, they built the business around precision, bespoke
+            design, and exceptional customer service.
+        </p>
     </div>
-
-    <script>
-        const carousel = document.getElementById("carousel");
-        function scrollCarousel(direction) {
-            const width = carousel.clientWidth;
-            carousel.scrollBy({ left: direction * width, behavior: "smooth" });
-        }
-    </script>
 </div>
 
 <div class="bg-background">
