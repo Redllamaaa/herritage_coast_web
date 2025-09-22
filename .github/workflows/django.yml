@@ -8,28 +8,48 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 4
       matrix:
         python-version: [3.13]
 
     steps:
     - uses: actions/checkout@v4
+
+    # Python setup
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+
+    # Node.js setup
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '22'
 
-    - name: Install Dependencies
+    # Install Python dependencies
+    - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Tests
+
+    # Install Tailwind dependencies
+    - name: Install Tailwind dependencies
       run: |
-        python manage.py tailwind dev
+        cd theme   # replace with your Tailwind app folder
+        npm install
+
+    # Build Tailwind CSS
+    - name: Build Tailwind CSS
+      run: |
+        cd theme
+        npm run build
+
+    # Apply migrations
+    - name: Apply migrations
+      run: python manage.py migrate
+
+    # Run Django tests
+    - name: Run Tests
+      run: python manage.py test
