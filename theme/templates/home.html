@@ -4,6 +4,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+{% extends "base.html" %} {% load static %} {% block title %}Home{% endblock %} {% block content %}
 <div class="border-b-3 border-gray-dark">
     <div>
         <img class="h-full w-auto lg:ml-32 pt-4 pb-4" src="{% static 'dark_logo.png' %}" alt="Logo" />
@@ -90,6 +91,24 @@
             design, and exceptional customer service.
         </p>
     </div>
+</div>
+<div class="flex justify-center gap-16 flex-wrap border-b-3 border-gray-dark p-8">
+    {% for member in featured_staff %}
+    <div class="text-center">
+        {% if member.photo %}
+        <img class="mb-3 rounded-xl h-32 w-32 mx-auto" src="{{ member.photo.url }}" alt="{{ member.name }}" />
+        {% else %}
+        <img class="mb-3 rounded-xl h-32 w-32 mx-auto" src="{% static 'images/default-staff.jpg' %}" alt="{{ member.name }}" />
+        {% endif %}
+        <p class="text-gray-900 font-semibold">{{ member.name }}</p>
+        <p class="text-gray-500 uppercase text-sm">{{ member.title }}</p>
+        {% if member.email %}
+        <a href="mailto:{{ member.email }}" class="text-gray-800 hover:underline text-sm">{{ member.email }}</a>
+        {% endif %}
+    </div>
+    {% empty %}
+    <p class="text-gray-500">No featured staff yet.</p>
+    {% endfor %}
 </div>
 
 <div class="bg-background">
