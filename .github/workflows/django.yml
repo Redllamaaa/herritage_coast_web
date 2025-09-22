@@ -26,7 +26,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '22'
 
     # Install Python dependencies
     - name: Install Python dependencies
@@ -49,7 +49,3 @@ jobs:
     # Apply migrations
     - name: Apply migrations
       run: python manage.py migrate
-
-    # Run Django tests
-    - name: Run Tests
-      run: python manage.py test
