@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from dashboard.models import Staff
 
 def home(request):
-    return render(request, 'home.html')
+    featured_staff = Staff.objects.filter(show_on_homepage=True)
+    return render(request, "home.html", {"featured_staff": featured_staff})
 
 def about(request):
     return render(request, 'about.html')
