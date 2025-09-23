@@ -49,3 +49,8 @@ jobs:
     # Apply migrations
     - name: Apply migrations
       run: python manage.py migrate
+
+    - name: Notify Discord
+      uses: Ilshidur/action-discord@v2
+      with:
+        args: 'New commit pushed to ${{ github.repository }} by ${{ github.actor }}'
